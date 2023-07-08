@@ -10,16 +10,10 @@ const toggleMenu = () => {
 <template>
   <div class="sticky top-0 z-10 h-16 border-b bg-white lg:py-2.5">
     <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
-      <h5
-        hidden
-        class="text-2xl font-medium text-gray-600 lg:block"
-      >
+      <h5 hidden class="text-2xl font-medium text-gray-600 lg:block">
         {{ header }}
       </h5>
-      <button
-        class="-mr-2 h-16 w-12 border-r lg:hidden"
-        @click="toggleMenu"
-      >
+      <button class="-mr-2 h-16 w-12 border-r lg:hidden" @click="toggleMenu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="my-auto h-6 w-6"

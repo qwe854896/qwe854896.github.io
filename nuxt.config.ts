@@ -5,12 +5,12 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'Jun-Hong Cheng'
+      title: 'Jun-Hong Cheng',
     },
     pageTransition: {
       name: 'page',
-      mode: 'out-in'
-    }
+      mode: 'out-in',
+    },
   },
   modules: [
     '@nuxtjs/eslint-module',
@@ -18,20 +18,20 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/i18n',
     'nuxt-headlessui',
-    '@vee-validate/nuxt'
+    '@vee-validate/nuxt',
   ],
   typescript: {
     typeCheck: true,
-    strict: true
+    strict: true,
   },
   css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {}
-    }
+      autoprefixer: {},
+    },
   },
   i18n: {
-    vueI18n: './i18n.config.ts'
-  }
+    vueI18n: './i18n.config.ts',
+  },
 })

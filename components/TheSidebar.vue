@@ -12,7 +12,7 @@ const { locale } = useI18n()
           src="@/assets/avatar.jpg"
           alt=""
           class="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
-        >
+        />
         <h5 class="mt-4 hidden text-xl font-semibold text-gray-600 lg:block">
           {{ $t('jh') }}
         </h5>
@@ -31,8 +31,11 @@ const { locale } = useI18n()
               class="-ml-1 h-6 w-6"
               viewBox="0 0 24 24"
               fill="none"
+            />
+            <span
+              class="group-hover:text-gray-700 group-active:-mr-1 group-active:font-medium"
+              >Home</span
             >
-            <span class="group-hover:text-gray-700 group-active:-mr-1 group-active:font-medium">Home</span>
           </NuxtLink>
         </li>
         <li>
@@ -46,7 +49,7 @@ const { locale } = useI18n()
               class="-ml-1 h-6 w-6"
               viewBox="0 0 24 24"
               fill="none"
-            >
+            />
             <span class="group-hover:text-gray-700">About</span>
           </NuxtLink>
         </li>
@@ -55,12 +58,8 @@ const { locale } = useI18n()
     <div>
       <form>
         <select v-model="locale">
-          <option value="en">
-            en
-          </option>
-          <option value="tw">
-            tw
-          </option>
+          <option value="en">en</option>
+          <option value="tw">tw</option>
         </select>
       </form>
     </div>

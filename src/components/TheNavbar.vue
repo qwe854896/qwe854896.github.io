@@ -1,48 +1,32 @@
 <script setup lang="ts">
-import { RouterLink } from 'vue-router'
+import { ref } from 'vue'
+
+const header = ref('Home')
+const toggleMenu = () => {
+  console.log('j')
+}
 </script>
 
 <template>
-  <nav class="navbar">
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-  </nav>
+  <div class="sticky top-0 z-10 h-16 border-b bg-white lg:py-2.5">
+    <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
+      <h5 hidden class="text-2xl font-medium text-gray-600 lg:block">{{ header }}</h5>
+      <button class="-mr-2 h-16 w-12 border-r lg:hidden" @click="toggleMenu">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="my-auto h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
 </template>
-
-<style scoped>
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>

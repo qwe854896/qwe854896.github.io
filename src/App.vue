@@ -7,8 +7,11 @@ import TheSidebar from './components/TheSidebar.vue'
 
 <template>
   <TheSidebar />
-  <div>
+  <div class="mb-6 ml-auto lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
     <TheNavbar />
-    <RouterView />
+
+    <div class="px-6 pt-6 2xl:container">
+      <RouterView />
+    </div>
   </div>
 </template>

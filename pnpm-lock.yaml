@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@headlessui/vue':
+    specifier: ^1.7.14
+    version: 1.7.14(vue@3.3.4)
   '@nuxt/devtools':
     specifier: latest
     version: 0.6.7(nuxt@3.6.2)(vite@4.4.2)
@@ -940,8 +943,8 @@ packages:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
 
-  /@intlify/bundle-utils@7.0.1(vue-i18n@9.3.0-beta.22):
-    resolution: {integrity: sha512-D7XrFOR8hbKnukGCWFrbz1IJsTQy8VgZ0TIOTQTSQ/bGhRmpyaLMQs44lJqP782mAR0AbumLlF56+oXpZqWuzQ==}
+  /@intlify/bundle-utils@7.0.2(vue-i18n@9.3.0-beta.22):
+    resolution: {integrity: sha512-8wbx9xhbawBFTE5LPTECiK26RRqrNS31jyWSur72ZXZZ4it5jiZTcG6eUJlNirr4+jXYio2DGY299JsGVT4cpw==}
     engines: {node: '>= 14.16'}
     peerDependencies:
       petite-vue-i18n: '*'
@@ -952,8 +955,8 @@ packages:
       vue-i18n:
         optional: true
     dependencies:
-      '@intlify/message-compiler': 9.3.0-beta.20
-      '@intlify/shared': 9.3.0-beta.20
+      '@intlify/message-compiler': 9.3.0-beta.24
+      '@intlify/shared': 9.3.0-beta.24
       acorn: 8.10.0
       escodegen: 2.1.0
       estree-walker: 2.0.2
@@ -982,14 +985,6 @@ packages:
       '@intlify/shared': 9.3.0-beta.22
     dev: true
 
-  /@intlify/message-compiler@9.3.0-beta.20:
-    resolution: {integrity: sha512-hwqQXyTnDzAVZ300SU31jO0+3OJbpOdfVU6iBkrmNpS7t2HRnVACo0EwcEXzJa++4EVDreqz5OeqJbt+PeSGGA==}
-    engines: {node: '>= 16'}
-    dependencies:
-      '@intlify/shared': 9.3.0-beta.20
-      source-map-js: 1.0.2
-    dev: true
-
   /@intlify/message-compiler@9.3.0-beta.22:
     resolution: {integrity: sha512-6X5h2v+RRixdB8qC4QZJpao4/sAP7l1nULK17/m0HuZZcTwWhjXvfSft88UCPHCTSj8rQp8Syr7ksKVhgIteKw==}
     engines: {node: '>= 16'}
@@ -998,9 +993,12 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /@intlify/shared@9.3.0-beta.20:
-    resolution: {integrity: sha512-RucSPqh8O9FFxlYUysQTerSw0b9HIRpyoN1Zjogpm0qLiHK+lBNSa5sh1nCJ4wSsNcjphzgpLQCyR60GZlRV8g==}
+  /@intlify/message-compiler@9.3.0-beta.24:
+    resolution: {integrity: sha512-prhHATkgp0mpPqoVgiAtLmUc1JMvs8fMH6w53AVEBn+VF87dLhzanfmWY5FoZWORG51ag54gBDBOoM/VFv3m3A==}
     engines: {node: '>= 16'}
+    dependencies:
+      '@intlify/shared': 9.3.0-beta.24
+      source-map-js: 1.0.2
     dev: true
 
   /@intlify/shared@9.3.0-beta.22:
@@ -1008,13 +1006,13 @@ packages:
     engines: {node: '>= 16'}
     dev: true
 
-  /@intlify/shared@9.3.0-beta.23:
-    resolution: {integrity: sha512-ozhS+OrHXY8WErxJIarlW7fwLvbMPr53JcXjlRiZr1IJUjDvAo5t40nUnBdyR3h/A8gHboLb45RvFJYU4qfuRA==}
+  /@intlify/shared@9.3.0-beta.24:
+    resolution: {integrity: sha512-AKxJ8s7eKIQWkNaf4wyyoLRwf4puCuQgjSChlDJm5JBEt6T8HGgnYTJLRXu6LD/JACn3Qwu6hM/XRX1c9yvjmQ==}
     engines: {node: '>= 16'}
     dev: true
 
-  /@intlify/unplugin-vue-i18n@0.12.1(vue-i18n@9.3.0-beta.22):
-    resolution: {integrity: sha512-gdWRdlOWC8x/OyvVk5qnGnvScMj+PRZaTB4LBf24l7X1dhGYVrQVt2dAZt97tSpEwRRxy4vBaL/qBqKN4kkaRw==}
+  /@intlify/unplugin-vue-i18n@0.12.2(vue-i18n@9.3.0-beta.22):
+    resolution: {integrity: sha512-IIgzLRSPUKZM1FBdUAZ9NwVPiLUr4ea5g/HLWe2lB7gNtPDz4FOfUNUllIT504hT+3pDoJmjaYJ6pyqT7F4Wuw==}
     engines: {node: '>= 14.16'}
     peerDependencies:
       petite-vue-i18n: '*'
@@ -1028,8 +1026,8 @@ packages:
       vue-i18n-bridge:
         optional: true
     dependencies:
-      '@intlify/bundle-utils': 7.0.1(vue-i18n@9.3.0-beta.22)
-      '@intlify/shared': 9.3.0-beta.20
+      '@intlify/bundle-utils': 7.0.2(vue-i18n@9.3.0-beta.22)
+      '@intlify/shared': 9.3.0-beta.24
       '@rollup/pluginutils': 5.0.2(rollup@3.26.2)
       '@vue/compiler-sfc': 3.3.4
       debug: 4.3.4
@@ -1599,9 +1597,9 @@ packages:
     resolution: {integrity: sha512-h0OqoSSdD9MGCXYZIDpYgQNN90r7MQ/sKVtyBQnrpGQLh1pqI7uLXoAVz4l4r09JzE2nNXK5U0thcx7Tq7ONUg==}
     engines: {node: ^14.16.0 || >=16.11.0}
     dependencies:
-      '@intlify/bundle-utils': 7.0.1(vue-i18n@9.3.0-beta.22)
+      '@intlify/bundle-utils': 7.0.2(vue-i18n@9.3.0-beta.22)
       '@intlify/shared': 9.3.0-beta.22
-      '@intlify/unplugin-vue-i18n': 0.12.1(vue-i18n@9.3.0-beta.22)
+      '@intlify/unplugin-vue-i18n': 0.12.2(vue-i18n@9.3.0-beta.22)
       '@mizchi/sucrase': 4.1.0
       '@nuxt/kit': 3.6.2
       '@vue/compiler-sfc': 3.3.4
@@ -9384,7 +9382,7 @@ packages:
       vue-router:
         optional: true
     dependencies:
-      '@intlify/shared': 9.3.0-beta.23
+      '@intlify/shared': 9.3.0-beta.24
       '@intlify/vue-i18n-bridge': 0.8.0(vue-i18n@9.3.0-beta.22)
       '@intlify/vue-router-bridge': 0.8.0(vue@3.3.4)
       ufo: 1.1.2

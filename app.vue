@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+// import { useI18n } from 'vue-i18n'
+// const { locale, getLocaleCookie } = useI18n()
+
+// const defaultLocaleCode = locale.value
+
+// if (process.client) {
+//   locale.value = getLocaleCookie() ?? defaultLocaleCode
+// }
+</script>
 
 <template>
   <NuxtLayout name="default">

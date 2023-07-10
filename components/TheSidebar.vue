@@ -1,5 +1,17 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
+
+import { useI18n } from 'vue-i18n'
+const { locale, locales, setLocale } = useI18n()
+
+const localeCode = ref('')
+onMounted(() => {
+  localeCode.value = locale.value
+})
+
+watch(localeCode, () => {
+  setLocale(localeCode.value)
+})
 </script>
 
 <template>
@@ -14,9 +26,11 @@ const { locale } = useI18n()
           class="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
         />
         <h5 class="mt-4 hidden text-xl font-semibold text-gray-600 lg:block">
-          {{ $t('jh') }}
+          {{ $t('JHC') }}
         </h5>
-        <span class="hidden text-gray-400 lg:block">NYCU Student</span>
+        <span class="hidden text-gray-400 lg:block"
+          >{{ $t('NYCU') }} {{ $t('student') }}</span
+        >
       </div>
 
       <ul class="mt-8 space-y-2 tracking-wide">
@@ -57,10 +71,22 @@ const { locale } = useI18n()
     </div>
     <div>
       <form>
-        <select v-model="locale">
-          <option value="en">en</option>
-          <option value="tw">tw</option>
-        </select>
+        <div class="mt-4 flex flex-row justify-center">
+          <label class="text-gray-600">{{ $t('language') }}</label>
+          <select
+            v-model="localeCode"
+            :title="$t('language')"
+            class="ml-4 font-bold text-gray-800"
+          >
+            <option
+              v-for="localeItem in locales"
+              :key="(localeItem as LocaleObject).code"
+              :value="(localeItem as LocaleObject).code"
+            >
+              {{ (localeItem as LocaleObject).name }}
+            </option>
+          </select>
+        </div>
       </form>
     </div>
   </aside>

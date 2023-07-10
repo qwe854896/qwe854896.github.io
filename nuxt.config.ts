@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  build: {
+    transpile: ['@headlessui/vue'],
+  },
   app: {
     head: {
       charset: 'utf-8',
@@ -32,6 +35,19 @@ export default defineNuxtConfig({
     },
   },
   i18n: {
-    vueI18n: './i18n.config.ts',
+    lazy: true,
+    defaultLocale: 'zh',
+    langDir: 'locales',
+    locales: [
+      { code: 'en', file: 'en.json', iso: 'en-US', name: 'English' },
+      { code: 'zh', file: 'zh.json', iso: 'zh-TW', name: '繁體中文' },
+    ],
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      cookieSecure: true,
+    },
+    vueI18n: 'i18n.config.ts',
   },
 })

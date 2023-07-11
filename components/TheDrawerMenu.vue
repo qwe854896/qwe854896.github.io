@@ -11,7 +11,11 @@ const close = () => {
     :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
   >
     <div class="close">
-      <button class="absolute right-0 top-0 mr-4 mt-4" @click="close">
+      <button
+        title="close"
+        class="absolute right-0 top-0 mr-4 mt-4"
+        @click="close"
+      >
         <svg
           class="h-6 w-6"
           fill="none"

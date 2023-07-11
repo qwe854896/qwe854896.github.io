@@ -33,7 +33,7 @@ const drawer = () => {
 
       <!-- Mobile toggle -->
       <div class="lg:hidden">
-        <button @click="drawer">
+        <button title="mobile-toggle" @click="drawer">
           <svg
             class="h-8 w-8 fill-current text-black"
             fill="none"

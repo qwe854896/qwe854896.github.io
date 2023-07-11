@@ -2,7 +2,7 @@
   <div>
     <p class="font-sans text-sm italic">Follow me:</p>
     <div class="social mt-4 flex space-x-5">
-      <a href="https://twitter.com/qwe854896">
+      <a title="twitter" href="https://twitter.com/qwe854896">
         <svg
           aria-hidden="true"
           focusable="false"
@@ -19,7 +19,7 @@
           ></path>
         </svg>
       </a>
-      <a href="https://www.facebook.com/qwe854896/">
+      <a title="facebook" href="https://www.facebook.com/qwe854896/">
         <svg
           aria-hidden="true"
           focusable="false"
@@ -36,7 +36,7 @@
           ></path>
         </svg>
       </a>
-      <a href="https://www.instagram.com/cheng.junhong/">
+      <a title="instagram" href="https://www.instagram.com/cheng.junhong/">
         <svg
           aria-hidden="true"
           focusable="false"
@@ -53,7 +53,7 @@
           ></path>
         </svg>
       </a>
-      <a href="https://www.youtube.com/@user-bb6ql2ss3j">
+      <a title="youtube" href="https://www.youtube.com/@user-bb6ql2ss3j">
         <svg
           aria-hidden="true"
           focusable="false"

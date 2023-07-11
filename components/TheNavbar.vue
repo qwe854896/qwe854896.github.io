@@ -1,38 +1,87 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+const isOpen = ref(false)
 
-const header = ref('Home')
-const toggleMenu = () => {
-  console.log('Menu toggled')
+watch(isOpen, (isOpen) => {
+  if (process.client) {
+    if (isOpen) document.body.style.setProperty('overflow', 'hidden')
+    else document.body.style.removeProperty('overflow')
+  }
+})
+
+onMounted(() => {
+  document.addEventListener('keydown', (e) => {
+    if (e.code === 'Escape' && isOpen.value) isOpen.value = false
+  })
+})
+
+const drawer = () => {
+  isOpen.value = !isOpen.value
 }
 </script>
 
 <template>
-  <div class="sticky top-0 z-10 h-16 border-b bg-white lg:py-2.5">
-    <div class="flex items-center justify-between space-x-4 px-6 2xl:container">
-      <h5 hidden class="text-2xl font-medium text-gray-600 lg:block">
-        {{ header }}
-      </h5>
-      <button
-        class="-mr-2 h-16 w-12 border-r lg:hidden"
-        title="toggleMenu"
-        @click="toggleMenu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="my-auto h-6 w-6"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
+  <nav class="fixed w-full bg-transparent p-6">
+    <div class="flex items-center justify-between">
+      <!-- Header logo -->
+      <div>
+        <img
+          src="@/assets/avatar.jpg"
+          alt=""
+          class="m-auto h-10 w-10 rounded-full object-cover lg:h-28 lg:w-28"
+        />
+      </div>
+
+      <!-- Mobile toggle -->
+      <div class="lg:hidden">
+        <button @click="drawer">
+          <svg
+            class="h-8 w-8 fill-current text-black"
+            fill="none"
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navbar -->
+      <TheSidebar />
+
+      <!-- Dark Background Transition -->
+      <transition
+        enter-from-class="opacity-0"
+        enter-active-class="ease-out transition-medium"
+        enter-to-class="opacity-100"
+        leave-from-class="opacity-100"
+        leave-active-class="ease-out transition-medium"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-show="isOpen"
+          class="fixed inset-0 z-10 transition-opacity"
+          @keydown.esc="isOpen = false"
+        >
+          <div
+            class="absolute inset-0 bg-black opacity-50"
+            tabindex="0"
+            @click="isOpen = false"
+          ></div>
+        </div>
+      </transition>
+
+      <!-- Drawer Menu -->
+      <TheDrawerMenu
+        :is-open="isOpen"
+        :on-close="
+          () => {
+            isOpen = false
+          }
+        "
+      />
     </div>
-  </div>
+  </nav>
 </template>

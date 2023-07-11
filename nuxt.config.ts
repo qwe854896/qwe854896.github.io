@@ -10,10 +10,6 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
       title: 'Jun-Hong Cheng',
     },
-    pageTransition: {
-      name: 'page',
-      mode: 'out-in',
-    },
   },
   modules: [
     '@nuxtjs/eslint-module',

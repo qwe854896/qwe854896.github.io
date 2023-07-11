@@ -1,18 +1,4 @@
-<script setup lang="ts">
-import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
-
-import { useI18n } from 'vue-i18n'
-const { locale, locales, setLocale } = useI18n()
-
-const localeCode = ref('')
-onMounted(() => {
-  localeCode.value = locale.value
-})
-
-watch(localeCode, () => {
-  setLocale(localeCode.value)
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <aside
@@ -69,25 +55,13 @@ watch(localeCode, () => {
         </li>
       </ul>
     </div>
-    <div>
-      <form>
-        <div class="mt-4 flex flex-row justify-center">
-          <label class="text-gray-600">{{ $t('language') }}</label>
-          <select
-            v-model="localeCode"
-            :title="$t('language')"
-            class="ml-4 font-bold text-gray-800"
-          >
-            <option
-              v-for="localeItem in locales"
-              :key="(localeItem as LocaleObject).code"
-              :value="(localeItem as LocaleObject).code"
-            >
-              {{ (localeItem as LocaleObject).name }}
-            </option>
-          </select>
-        </div>
-      </form>
+    <div class="mt-4 flex flex-col justify-center">
+      <div class="mb-5">
+        <TheFollow />
+      </div>
+      <div class="text-center">
+        <LanguageSelection />
+      </div>
     </div>
   </aside>
 </template>
